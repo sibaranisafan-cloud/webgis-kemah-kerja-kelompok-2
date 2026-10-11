@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda • WebGIS Zona Nilai Tanah Desa Sidodadi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="nav-text">
+                <span class="nav-title">WebGIS ZNT</span>
+                <span class="nav-sub">Desa Sidodadi · Pesawaran</span>
+            </div>
+        </div>
+        <!-- Logo tengah navbar -->
+<div class="nav-center-logos">
+    <img src="assets/Images/ITERA.jpeg" alt="ITERA" class="nav-center-logo">
+    <img src="assets/Images/LOGO FTIK.jpeg" alt="FTIK" class="nav-center-logo">
+    <img src="assets/Images/GT ITERA.jpeg" alt="GT ITERA" class="nav-center-logo">
+    <img src="assets/Images/KEMKER23.jpeg" alt="Kemah   Kerja" class="nav-center-logo">
+</div>
+        <a href="webgis.html" class="nav-cta"><i class="fa-solid fa-map"></i> Buka Peta</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-pill">
+                <span class="dot"></span> Geoportal Resmi Desa Sidodadi
+            </div>
+            <h1 class="hero-title">
+                Zona Nilai Tanah<br>
+                <span class="hero-accent">Desa Sidodadi</span>
+            </h1>
+            <p class="hero-desc">
+                Visualisasi spasial <strong>Nilai Indikasi Rata-rata (NIR)</strong> tanah
+                berbasis WebGIS — transparan, akurat, dan mudah diakses.
+                Jelajahi persebaran zona ekonomi, estimasi nilai tanah, serta pengukuran
+                bidang langsung dari browser Anda.
+            </p>
+            <div class="hero-actions">
+                <a href="webgis.html" class="btn-primary">
+                    <i class="fa-solid fa-map-marked-alt"></i> Jelajahi Peta Interaktif
+                </a>
+                <a href="#tentang" class="btn-ghost">
+                    <i class="fa-solid fa-circle-info"></i> Tentang ZNT
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><strong>11</strong><span>Klasifikasi Zona</span></div>
+                <div class="divider"></div>
+                <div class="stat"><strong>9</strong><span>Kelas Nilai (NIR)</span></div>
+                <div class="divider"></div>
+                <div class="stat"><strong>1</strong><span>Desa Terpetakan</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG ZNT -->
+    <section class="section" id="tentang">
+        <div class="section-head">
+            <span class="section-tag">Apa itu ZNT?</span>
+            <h2>Mengenal Zona Nilai Tanah</h2>
+            <p>Zona Nilai Tanah (ZNT) adalah kumpulan bidang tanah dengan nilai indikasi rata-rata (NIR) yang relatif sama, digunakan sebagai dasar penilaian tanah untuk NJOP, perpajakan, dan perencanaan tata ruang.</p>
+        </div>
+        <div class="zona-grid">
+            <div class="zona-card">
+                <div class="zona-stripe stripe-red"></div>
+                <div class="zona-icon icon-red"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <h3>Zona Nilai Tinggi</h3>
+                <p>Area komersial, pusat aktivitas ekonomi, dan akses jalan utama dengan nilai tanah tertinggi.</p>
+            </div>
+            <div class="zona-card">
+                <div class="zona-stripe stripe-orange"></div>
+                <div class="zona-icon icon-orange"><i class="fa-solid fa-house-chimney"></i></div>
+                <h3>Zona Nilai Sedang</h3>
+                <p>Kawasan pemukiman warga dengan akses lingkungan dan fasilitas umum yang memadai.</p>
+            </div>
+            <div class="zona-card">
+                <div class="zona-stripe stripe-green"></div>
+                <div class="zona-icon icon-green"><i class="fa-solid fa-tree"></i></div>
+                <h3>Zona Nilai Rendah</h3>
+                <p>Lahan perkebunan, pertanian, dan area terbuka dengan nilai tanah paling terjangkau.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUKASI -->
+    <section class="section section-alt">
+        <div class="section-head">
+            <span class="section-tag">Edukasi</span>
+            <h2>Apa Itu Zona Nilai Tanah?</h2>
+            <p>Pemahaman mendasar sebelum menjelajahi peta</p>
+        </div>
+        <div class="edu-intro">
+            <div class="edu-text">
+                <h3>Definisi Resmi</h3>
+                <p><strong>Zona Nilai Tanah (ZNT)</strong> adalah kumpulan bidang tanah dengan <em>nilai indikasi rata-rata (NIR)</em> yang relatif sama. ZNT disusun oleh pemerintah sebagai dasar penilaian tanah, penetapan NJOP PBB, perpajakan daerah, hingga perencanaan tata ruang.</p>
+                <p>Nilai tanah dalam ZNT <strong>bukan harga jual-beli pasar</strong>, melainkan <em>estimasi nilai indikatif</em> yang dihitung dari berbagai variabel: akses jalan, jarak ke pusat ekonomi, fasilitas umum, hingga karakteristik fisik lahan.</p>
+            </div>
+            <div class="edu-facts">
+                <div class="fact-item">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <div><strong>Basis Penilaian</strong><p>Menjadi acuan resmi NJOP PBB & pajak daerah</p></div>
+                </div>
+                <div class="fact-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div><strong>Berbasis NIR</strong><p>Nilai Indikasi Rata-rata dari sampel harga pasar</p></div>
+                </div>
+                <div class="fact-item">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <div><strong>Berbasis Spasial</strong><p>Digambarkan sebagai poligon zona di peta</p></div>
+                </div>
+                <div class="fact-item">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <div><strong>Diperbarui Berkala</strong><p>Disesuaikan dengan perkembangan wilayah</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANFAAT ZNT -->
+    <section class="section">
+        <div class="section-head">
+            <span class="section-tag">Manfaat</span>
+            <h2>Untuk Siapa ZNT Ini?</h2>
+            <p>Zona Nilai Tanah bermanfaat bagi berbagai pihak</p>
+        </div>
+        <div class="manfaat-grid">
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-blue"><i class="fa-solid fa-users"></i></div>
+                <h3>Masyarakat Umum</h3>
+                <p>Mengetahui estimasi nilai tanah secara transparan sebagai referensi jual-beli, warisan, atau agunan.</p>
+            </div>
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-green2"><i class="fa-solid fa-building-columns"></i></div>
+                <h3>Pemerintah Desa</h3>
+                <p>Dasar penetapan NJOP, perencanaan tata ruang, dan identifikasi potensi ekonomi wilayah.</p>
+            </div>
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-gold"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h3>Perpajakan & BPN</h3>
+                <p>Acuan penilaian PBB, BPHTB, dan pengadaan tanah untuk pembangunan publik.</p>
+            </div>
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-purple"><i class="fa-solid fa-chart-pie"></i></div>
+                <h3>Investor & Developer</h3>
+                <p>Analisis kelayakan investasi properti dan estimasi potensi kawasan.</p>
+            </div>
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-teal"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Akademisi & Mahasiswa</h3>
+                <p>Sumber data spasial untuk penelitian, tugas akhir, dan studi kasus pertanahan.</p>
+            </div>
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-red2"><i class="fa-solid fa-handshake"></i></div>
+                <h3>Notaris & PPAT</h3>
+                <p>Referensi nilai wajar tanah dalam proses transaksi dan pembuatan akta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOSARIUM -->
+    <section class="section section-alt">
+        <div class="section-head">
+            <span class="section-tag">Glosarium</span>
+            <h2>Istilah Penting</h2>
+            <p>Kamus singkat untuk memahami data ZNT</p>
+        </div>
+        <div class="glosarium-grid">
+            <div class="glos-card"><span class="glos-abbr">ZNT</span><h3>Zona Nilai Tanah</h3><p>Kumpulan bidang tanah dengan nilai indikasi rata-rata (NIR) yang relatif sama.</p></div>
+            <div class="glos-card"><span class="glos-abbr">NIR</span><h3>Nilai Indikasi Rata-rata</h3><p>Estimasi nilai tanah per meter persegi yang dihitung dari sampel transaksi pasar.</p></div>
+            <div class="glos-card"><span class="glos-abbr">NJOP</span><h3>Nilai Jual Objek Pajak</h3><p>Harga rata-rata tanah/bangunan yang ditetapkan pemerintah sebagai dasar PBB.</p></div>
+            <div class="glos-card"><span class="glos-abbr">PBB</span><h3>Pajak Bumi & Bangunan</h3><p>Pajak atas tanah dan bangunan yang besarannya mengacu pada NJOP.</p></div>
+            <div class="glos-card"><span class="glos-abbr">BPHTB</span><h3>Bea Perolehan Hak Tanah & Bangunan</h3><p>Pajak yang dikenakan saat peralihan hak atas tanah dan/atau bangunan.</p></div>
+            <div class="glos-card"><span class="glos-abbr">Zona</span><h3>Poligon Zona</h3><p>Area di peta yang dibatasi garis dan mewakili satu kelas nilai tanah tertentu.</p></div>
+        </div>
+    </section>
+
+    <!-- DASAR HUKUM -->
+    <section class="section">
+        <div class="section-head">
+            <span class="section-tag">Regulasi</span>
+            <h2>Dasar Hukum</h2>
+            <p>Landasan aturan penyusunan Zona Nilai Tanah di Indonesia</p>
+            <p class="scroll-hint" style="margin-top: 8px; color: var(--gold); font-size: 0.85rem;">
+                <i class="fa-solid fa-hand-pointer"></i> Klik kartu untuk membaca bunyi lengkap
+            </p>
+        </div>
+        <div class="hukum-list">
+            <div class="hukum-item" onclick="toggleHukum(this)">
+                <div class="hukum-header">
+                    <div class="hukum-num">01</div>
+                    <div class="hukum-text">
+                        <h3>UU No. 5 Tahun 1960</h3>
+                        <p>Peraturan Dasar Pokok-Pokok Agraria (UUPA) — dasar hukum pertanahan nasional.</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-down hukum-arrow"></i>
+                </div>
+                <div class="hukum-body"><div class="hukum-body-inner">
+                    <p><strong>Pasal 1:</strong></p>
+                    <p>(1) Seluruh wilayah Indonesia adalah kesatuan tanah-air dari seluruh rakyat Indonesia, yang bersatu sebagai bangsa Indonesia.</p>
+                    <p>(2) Seluruh bumi, air dan ruang angkasa, termasuk kekayaan alam yang terkandung di dalamnya dalam wilayah Republik Indonesia sebagai karunia Tuhan Yang Maha Esa, adalah bumi, air dan ruang angkasa bangsa Indonesia dan merupakan kekayaan nasional.</p>
+                    <p>(3) Hubungan antara bangsa Indonesia dan bumi, air serta ruang angkasa termaksud dalam ayat (2) pasal ini adalah hubungan yang bersifat abadi.</p>
+                    <p style="margin-top: 12px;"><strong>Pasal 2:</strong></p>
+                    <p>(1) Atas dasar ketentuan dalam pasal 33 ayat (3) Undang-Undang Dasar dan hal-hal sebagai yang dimaksud dalam pasal 1, bumi, air dan ruang angkasa, termasuk kekayaan alam yang terkandung di dalamnya itu pada tingkatan tertinggi dikuasai oleh Negara, sebagai organisasi kekuasaan seluruh rakyat.</p>
+                    <p>(2) Hak menguasai dari Negara termaksud dalam ayat (1) pasal ini memberi wewenang untuk:</p>
+                    <p style="padding-left: 20px;">a. mengatur dan menyelenggarakan peruntukan, penggunaan, persediaan dan pemeliharaan bumi, air dan ruang angkasa tersebut;</p>
+                    <p style="padding-left: 20px;">b. menentukan dan mengatur hubungan-hubungan hukum antara orang-orang dengan bumi, air dan ruang angkasa;</p>
+                    <p style="padding-left: 20px;">c. menentukan dan mengatur hubungan-hubungan hukum antara orang-orang dan perbuatan-perbuatan hukum yang mengenai bumi, air dan ruang angkasa.</p>
+                    <p style="margin-top: 12px;"><strong>Pasal 4:</strong></p>
+                    <p>(1) Atas dasar hak menguasai dari Negara sebagai yang dimaksud dalam pasal 2 ditentukan adanya macam-macam hak atas permukaan bumi, yang disebut tanah, yang dapat diberikan kepada dan dipunyai oleh orang-orang, baik sendiri maupun bersama-sama dengan orang-orang lain serta badan-badan hukum.</p>
+                    <p>(2) Hak-hak atas tanah yang dimaksud dalam ayat (1) pasal ini memberi wewenang untuk mempergunakan tanah yang bersangkutan, demikian pula tubuh bumi dan air serta ruang yang ada di atasnya sekadar diperlukan untuk kepentingan yang langsung berhubungan dengan penggunaan tanah itu dalam batas-batas menurut undang-undang ini dan peraturan-peraturan hukum lain yang lebih tinggi.</p>
+                </div></div>
+            </div>
+            <div class="hukum-item" onclick="toggleHukum(this)">
+                <div class="hukum-header">
+                    <div class="hukum-num">02</div>
+                    <div class="hukum-text">
+                        <h3>UU No. 12 Tahun 1985 jo. UU No. 12 Tahun 1994</h3>
+                        <p>Pajak Bumi dan Bangunan — mengatur NJOP sebagai dasar pengenaan PBB.</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-down hukum-arrow"></i>
+                </div>
+                <div class="hukum-body"><div class="hukum-body-inner">
+                    <p><strong>Pasal 1:</strong></p>
+                    <p>(1) Pajak Bumi dan Bangunan adalah pajak yang dikenakan atas objek pajak berupa bumi dan/atau bangunan.</p>
+                    <p>(2) Yang dimaksud dengan objek pajak adalah bumi dan/atau bangunan.</p>
+                    <p>(3) Yang dimaksud dengan bumi adalah permukaan bumi dan tubuh bumi yang ada di bawahnya. Permukaan bumi meliputi tanah dan perairan pedalaman serta laut wilayah Indonesia.</p>
+                    <p>(4) Yang dimaksud dengan bangunan adalah konstruksi teknik yang ditanam atau dilekatkan secara tetap pada tanah dan/atau perairan.</p>
+                    <p style="margin-top: 12px;"><strong>Pasal 6:</strong></p>
+                    <p>(1) Dasar pengenaan pajak adalah Nilai Jual Objek Pajak (NJOP).</p>
+                    <p>(2) Besarnya NJOP ditetapkan setiap tiga tahun oleh Menteri Keuangan, kecuali untuk daerah tertentu ditetapkan setiap tahun sesuai dengan perkembangan daerahnya.</p>
+                    <p>(3) Dasar penghitungan pajak adalah Nilai Jual Kena Pajak (NJKP) yang ditetapkan serendah-rendahnya 20% dan setinggi-tingginya 100% dari NJOP.</p>
+                    <p style="margin-top: 12px;"><strong>Pasal 7:</strong></p>
+                    <p>Tarif pajak yang dikenakan atas objek pajak adalah sebesar 0,5% (lima per sepuluh persen).</p>
+                </div></div>
+            </div>
+            <div class="hukum-item" onclick="toggleHukum(this)">
+                <div class="hukum-header">
+                    <div class="hukum-num">03</div>
+                    <div class="hukum-text">
+                        <h3>Permen ATR/BPN No. 5 Tahun 2018</h3>
+                        <p>Pedoman Penilaian Tanah — metodologi penyusunan ZNT dan penilaian tanah.</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-down hukum-arrow"></i>
+                </div>
+                <div class="hukum-body"><div class="hukum-body-inner">
+                    <p><strong>Pasal 3:</strong></p>
+                    <p>Ruang lingkup pedoman penilaian tanah meliputi:</p>
+                    <p style="padding-left: 20px;">a. persiapan penilaian tanah;</p>
+                    <p style="padding-left: 20px;">b. pelaksanaan penilaian tanah;</p>
+                    <p style="padding-left: 20px;">c. pelaporan hasil penilaian tanah;</p>
+                    <p style="padding-left: 20px;">d. penyajian peta zona nilai tanah.</p>
+                    <p style="margin-top: 12px;"><strong>Pasal 4:</strong></p>
+                    <p>(1) Penilaian tanah dilakukan dengan pendekatan data pasar, pendekatan pendapatan, dan/atau pendekatan biaya.</p>
+                    <p>(2) Pendekatan data pasar dilakukan dengan membandingkan data transaksi jual beli tanah sejenis.</p>
+                    <p>(3) Pendekatan pendapatan dilakukan berdasarkan kemampuan tanah menghasilkan pendapatan.</p>
+                    <p>(4) Pendekatan biaya dilakukan berdasarkan biaya yang dikeluarkan untuk membuat tanah tersebut.</p>
+                    <p style="margin-top: 12px;"><strong>Pasal 15:</strong></p>
+                    <p>(1) Zona Nilai Tanah adalah kumpulan bidang tanah dengan nilai indikasi rata-rata (NIR) yang relatif sama.</p>
+                    <p>(2) Zona Nilai Tanah disajikan dalam bentuk peta dengan skala minimal 1:5.000.</p>
+                    <p>(3) Nilai indikasi rata-rata (NIR) ditetapkan berdasarkan hasil analisis nilai tanah per meter persegi.</p>
+                </div></div>
+            </div>
+            <div class="hukum-item" onclick="toggleHukum(this)">
+                <div class="hukum-header">
+                    <div class="hukum-num">04</div>
+                    <div class="hukum-text">
+                        <h3>Peraturan Menteri Keuangan Terkait</h3>
+                        <p>Klasifikasi dan tata cara penilaian objek pajak bumi dan bangunan.</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-down hukum-arrow"></i>
+                </div>
+                <div class="hukum-body"><div class="hukum-body-inner">
+                    <p><strong>PMK No. 208/PMK.07/2018</strong> tentang Pedoman Penilaian Pajak Bumi dan Bangunan Perdesaan dan Perkotaan:</p>
+                    <p style="margin-top: 8px;"><strong>Pasal 2:</strong></p>
+                    <p>Penilaian PBB-P2 dilakukan dengan menggunakan:</p>
+                    <p style="padding-left: 20px;">a. pendekatan data pasar (market data approach);</p>
+                    <p style="padding-left: 20px;">b. pendekatan biaya (cost approach); dan/atau</p>
+                    <p style="padding-left: 20px;">c. pendekatan pendapatan (income approach).</p>
+                    <p style="margin-top: 12px;"><strong>Pasal 4:</strong></p>
+                    <p>(1) Pendekatan data pasar dilakukan dengan cara membandingkan objek pajak yang akan dinilai dengan objek pajak lain yang sejenis yang telah diketahui harga jualnya.</p>
+                    <p>(2) Faktor penyesuaian meliputi: lokasi, luas, bentuk, frontage (lebar muka), dan waktu transaksi.</p>
+                    <p style="margin-top: 12px;"><strong>Pasal 6:</strong></p>
+                    <p>Nilai Jual Objek Pajak (NJOP) yang ditetapkan sebagai dasar pengenaan PBB-P2 ditetapkan berdasarkan hasil penilaian massal (mass appraisal) dan/atau penilaian individual.</p>
+                </div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt">
+        <div class="section-head">
+            <span class="section-tag">Tanya Jawab</span>
+            <h2>Pertanyaan yang Sering Diajukan</h2>
+            <p>Hal-hal umum seputar Zona Nilai Tanah</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Apa bedanya ZNT dengan harga pasar tanah?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer"><p>ZNT berisi <strong>nilai indikasi rata-rata</strong> yang bersifat estimasi, bukan harga transaksi riil. Harga pasar bisa lebih tinggi atau lebih rendah tergantung negosiasi, kondisi tanah, dan faktor lainnya.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Apakah ZNT bisa berubah?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer"><p>Ya. ZNT diperbarui secara berkala (biasanya tahunan atau beberapa tahun sekali) mengikuti perkembangan wilayah, infrastruktur, dan kondisi ekonomi lokal.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Bagaimana cara membaca warna di peta?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer"><p>Warna di peta menunjukkan <strong>kelas nilai tanah</strong>. Semakin merah/hijau tua (tergantung skema) = nilai semakin tinggi. Semakin kuning muda = nilai semakin rendah. Klik polygon di peta untuk melihat detail NIR-nya.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Apakah ZNT bisa dipakai untuk jual beli?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer"><p>ZNT bisa jadi <strong>referensi awal</strong>, tapi bukan patokan mutlak. Untuk transaksi resmi, sebaiknya gunakan jasa <em>appraisal</em> independen (KJPP) yang mempertimbangkan banyak variabel.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Siapa yang menyusun ZNT?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer"><p>Disusun oleh <strong>Kementerian ATR/BPN</strong> bersama pemerintah daerah, dengan melibatkan surveyor berlisensi dan penilai tanah publik.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: METODOLOGI PENELITIAN (Alur Penelitian) -->
+    <section class="section" id="metodologi">
+        <div class="section-head">
+            <span class="section-tag">Metodologi</span>
+            <h2>Alur Penelitian</h2>
+            <p>Empat tahapan utama penelitian dari akuisisi data hingga menghasilkan analisis kesesuaian dan WebGIS interaktif.</p>
+        </div>
+        <div class="horizontal-stepper">
+            <div class="h-step">
+                <div class="h-step-circle">
+                    <span class="h-step-num">01</span>
+                    <i class="fa-solid fa-satellite-dish h-step-icon"></i>
+                </div>
+                <h3>Akuisisi Data</h3>
+                <p>Pengumpulan data spasial, citra satelit, dan informasi awal bidang tanah di lokasi penelitian.</p>
+            </div>
+            <div class="h-step">
+                <div class="h-step-circle">
+                    <span class="h-step-num">02</span>
+                    <i class="fa-solid fa-crosshairs h-step-icon"></i>
+                </div>
+                <h3>Survei Harga Tanah & Bangunan</h3>
+                <p>Pengambilan sampel harga tanah dan bangunan dari warga melalui wawancara dan kuesioner di lokasi penelitian.</p>
+            </div>
+            <div class="h-step">
+                <div class="h-step-circle">
+                    <span class="h-step-num">03</span>
+                    <i class="fa-solid fa-layer-group h-step-icon"></i>
+                </div>
+                <h3>Analisis Spasial</h3>
+                <p>Overlay data, perhitungan luas, interpolasi IDW, dan analisis kesesuaian nilai tanah.</p>
+            </div>
+            <div class="h-step">
+                <div class="h-step-circle">
+                    <span class="h-step-num">04</span>
+                    <i class="fa-solid fa-earth-asia h-step-icon"></i>
+                </div>
+                <h3>Publikasi WebGIS</h3>
+                <p>Penyajian hasil analisis dalam bentuk WebGIS interaktif yang informatif dan mudah diakses.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: DAMPAK & MANFAAT -->
+    <section class="section" id="dampak">
+        <div class="section-head">
+            <span class="section-tag">Nilai Tambah</span>
+            <h2>Dampak & Manfaat</h2>
+            <p>Bagaimana hasil penelitian ini dapat memberikan kontribusi nyata bagi berbagai pihak.</p>
+        </div>
+        <div class="manfaat-grid">
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-gold"><i class="fa-solid fa-book-open"></i></div>
+                <h3>Kontribusi Akademik</h3>
+                <p>Menjadi referensi dan data dasar bagi penelitian selanjutnya terkait nilai tanah di wilayah pesisir.</p>
+            </div>
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-blue"><i class="fa-solid fa-users-gear"></i></div>
+                <h3>Pemberdayaan Masyarakat</h3>
+                <p>Membantu warga memahami nilai tanah mereka sebagai bentuk transparansi informasi spasial.</p>
+            </div>
+            <div class="manfaat-card">
+                <div class="manfaat-icon icon-green2"><i class="fa-solid fa-building-columns"></i></div>
+                <h3>Dukungan Kebijakan</h3>
+                <p>Menyediakan data spasial yang dapat digunakan pemerintah desa untuk perencanaan tata ruang.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: TAHAPAN KEGIATAN -->
+    <section class="section section-alt" id="tahapan">
+        <div class="section-head">
+            <span class="section-tag">Linimasa</span>
+            <h2>Tahapan Kegiatan</h2>
+            <p>Jadwal pelaksanaan Kemah Kerja Kelompok 2 di Desa Sidodadi.</p>
+        </div>
+        <div class="stepper">
+            <div class="step" data-step="1">
+                <div class="step-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                <span class="step-tag">Tahap 01</span>
+                <h3>Persiapan & Koordinasi</h3>
+                <p>Koordinasi dengan perangkat desa, pengurusan surat izin, dan penyusunan instrumen survei lapangan.</p>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-icon"><i class="fa-solid fa-database"></i></div>
+                <span class="step-tag">Tahap 02</span>
+                <h3>Pengumpulan Data Spasial</h3>
+                <p>Akuisisi data spasial, citra satelit, peta administrasi, dan data yuridis bidang tanah.</p>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+                <span class="step-tag">Tahap 03</span>
+                <h3>Survei Harga Tanah & Bangunan</h3>
+                <p>Pengambilan sampel harga tanah dan bangunan dari warga melalui wawancara dan kuesioner di lokasi penelitian.</p>
+            </div>
+            <div class="step" data-step="4">
+                <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <span class="step-tag">Tahap 04</span>
+                <h3>Analisis & Interpolasi IDW</h3>
+                <p>Overlay data, perhitungan luas, interpolasi IDW, dan analisis kesesuaian nilai tanah per bidang.</p>
+            </div>
+            <div class="step" data-step="5">
+                <div class="step-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <span class="step-tag">Tahap 05</span>
+                <h3>Penyusunan WebGIS</h3>
+                <p>Pengembangan WebGIS interaktif untuk publikasi hasil penelitian dan diseminasi data spasial.</p>
+            </div>
+            <div class="step" data-step="6">
+                <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <span class="step-tag">Tahap 06</span>
+                <h3>Laporan Akhir & Publikasi</h3>
+                <p>Penyusunan laporan, publikasi, dan presentasi hasil penelitian kepada pihak terkait.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Institusi Pelaksana -->
+<section class="section" id="mitra">
+    <div class="section-head">
+        <span class="section-tag">Identitas Kegiatan</span>
+        <h2>Institusi Pelaksana</h2>
+        <p>Kegiatan Kemah Kerja ini diselenggarakan oleh Program Studi Teknik Geomatika, Fakultas Teknologi Infrastruktur dan Kewilayahan, Institut Teknologi Sumatera (ITERA).</p>
+    </div>
+        <div class="logo-grid">
+            <div class="logo-item">
+                <img src="assets/Images/ITERA.jpeg" alt="Institut Teknologi Sumatera">
+                <span class="logo-caption">Institut Teknologi Sumatera</span>
+                <span class="logo-sub">ITERA · Lampung</span>
+            </div>
+                <div class="logo-item">
+        <img src="assets/Images/LOGO FTIK.jpeg" alt="Fakultas Teknologi infrastruktur dan Kewilayahan">
+        <span class="logo-caption">Fakultas Teknologi infrastruktur dan Kewilayahan</span>
+        <span class="logo-sub">Fakultas</span>
+    </div>
+            <div class="logo-item">
+                <img src="assets/Images/GT ITERA.jpeg" alt="Prodi Teknik Geomatika">
+                <span class="logo-caption">Teknik Geomatika</span>
+                <span class="logo-sub">Program Studi</span>
+            </div>
+            <div class="logo-item">
+                <img src="assets/Images/KEMKER23.jpeg" alt="Prodi Angkatan">
+                <span class="logo-caption">Kemah Kerja</span>
+                <span class="logo-sub">Kelompok 2 · 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: TIM KAMI (DOSEN + ANGGOTA) -->
+    <section class="section section-tim-kami">
+        <div class="section-head">
+            <span class="section-tag">Pembimbing</span>
+            <h2>Dosen Pembimbing Kemah Kerja</h2>
+        </div>
+        <div class="dosen-wrap">
+            <div class="dosen-card">
+                <div class="dosen-photo" onclick="openProfile('assets/Images/PAK YUDHA.jpeg', 'Ir. Rizky Ahmad Yudanegara, S.T., M.T.', 'NIP 199411292025061006', 'Kemah Kerja Kelompok 2')" style="cursor: pointer;">
+                    <img src="assets/Images/PAK YUDHA.jpeg" alt="Foto Dosen Pembimbing">
+                </div>
+                <div class="dosen-info">
+                    <span class="dosen-label">Dosen Pembimbing</span>
+                    <h3>Ir. Rizky Ahmad Yudanegara, S.T., M.T.</h3>
+                    <p>Program Studi Teknik Geomatika · Kemah Kerja Kelompok 2</p>
+                </div>
+                <div class="dosen-deco"><i class="fa-solid fa-graduation-cap"></i></div>
+            </div>
+        </div>
+
+        <div class="tim-divider"></div>
+
+        <div class="section-head">
+            <span class="section-tag">Tim Kami</span>
+            <h2>Anggota Kelompok 2</h2>
+        </div>
+
+        <div class="anggota-scroll">
+
+            <!-- ANGGOTA 1 - Novita -->
+            <div class="member-card" onclick="openProfile('assets/Images/Novita.jpeg', 'Novita Sihombing', 'NIM 123230016', 'Anggota')">
+                <div class="member-badge">Anggota</div>
+                <div class="member-avatar">
+                    <img src="assets/Images/Novita.jpeg" alt="Novita">
+                </div>
+                <h3 class="member-name">Novita Sihombing</h3>
+                <p class="member-nim">NIM 123230016</p>
+                <span class="member-role">Anggota</span>
+            </div>
+
+            <!-- ANGGOTA 2 - Ira -->
+            <div class="member-card" onclick="openProfile('assets/Images/Ira.jpeg', 'Ira', 'NIM 123230054', 'Anggota')">
+                <div class="member-badge">Anggota</div>
+                <div class="member-avatar">
+                    <img src="assets/Images/Ira.jpeg" alt="Ira">
+                </div>
+                <h3 class="member-name">Ira</h3>
+                <p class="member-nim">NIM 123230054</p>
+                <span class="member-role">Anggota</span>
+            </div>
+
+            <!-- KETUA - Kaleb -->
+            <div class="member-card is-leader" onclick="openProfile('assets/Images/FotoKaleb.jpeg', 'Kaleb Safan Dove Sibarani', 'NIM 123230076', 'Ketua Kelompok')">
+                <div class="member-badge badge-leader">Ketua</div>
+                <div class="member-avatar">
+                    <img src="assets/Images/FotoKaleb.jpeg" alt="Kaleb">
+                </div>
+                <h3 class="member-name">Kaleb Safan Dove Sibarani</h3>
+                <p class="member-nim">NIM 123230076</p>
+                <span class="member-role role-leader">Ketua Kelompok</span>
+            </div>
+
+            <!-- ANGGOTA 3 - Daudy -->
+            <div class="member-card" onclick="openProfile('assets/Images/Daudy.jpeg', 'Daudy Samuel Simamora', 'NIM 123230081', 'Anggota')">
+                <div class="member-badge">Anggota</div>
+                <div class="member-avatar">
+                    <img src="assets/Images/Daudy.jpeg" alt="Daudy">
+                </div>
+                <h3 class="member-name">Daudy Samuel Simamora</h3>
+                <p class="member-nim">NIM 123230081</p>
+                <span class="member-role">Anggota</span>
+            </div>
+
+            <!-- ANGGOTA 4 - Harits -->
+            <div class="member-card" onclick="openProfile('assets/Images/Harits.jpeg', 'Harits Mukhlash Al Qisthi', 'NIM 123230101', 'Anggota')">
+                <div class="member-badge">Anggota</div>
+                <div class="member-avatar">
+                    <img src="assets/Images/Harits.jpeg" alt="Harits">
+                </div>
+                <h3 class="member-name">Harits Mukhlash Al Qisthi</h3>
+                <p class="member-nim">NIM 123230101</p>
+                <span class="member-role">Anggota</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA BOTTOM -->
+    <section class="cta-bottom">
+        <div class="cta-content">
+            <h2>Siap menjelajahi peta?</h2>
+            <p>Buka WebGIS interaktif untuk melihat sebaran zona nilai tanah Desa Sidodadi.</p>
+            <a href="webgis.html" class="btn-primary btn-large">
+                <i class="fa-solid fa-map-marked-alt"></i>
+                Masuk WebGIS
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+
+            <!-- 1. Brand -->
+            <div class="footer-brand">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>WebGIS Zona Nilai Tanah</span>
+            </div>
+
+            <!-- 2. Teks Copyright & Info -->
+            <div class="footer-text">
+                <p>© 2026 Kelompok 2 Kemah Kerja · Desa Sidodadi, Teluk Pandan, Pesawaran, Lampung</p>
+                <p class="footer-small">Dibangun dengan Leaflet.js · Data ZNT berbasis GeoJSON</p>
+            </div>
+
+            <!-- 3. GARIS EMAS (Divider) -->
+            <div class="footer-divider"></div>
+
+            <!-- 4. Teks Ajakan -->
+            <p class="connect-text">Terhubung dengan kami untuk informasi &amp; pembaruan terbaru</p>
+
+            <!-- 5. Ikon Instagram -->
+            <div class="footer-social">
+                <a href="https://www.instagram.com/kemahkerja2.2026/" target="_blank" class="footer-ig" title="Ikuti kami di Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         MODAL PROFIL ANGGOTA  ← INI YANG TADI HILANG
+         ========================================================= -->
+    <div id="profileModal" class="modal-overlay" onclick="closeProfile(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeProfile(event)">&times;</button>
+            <div class="modal-avatar-wrap">
+                <img id="modalImg" src="" alt="Foto Profil" class="modal-avatar">
+            </div>
+            <h2 id="modalName">Nama</h2>
+            <p id="modalNim" class="modal-badge">NIM: -</p>
+            <p id="modalRole" class="modal-role">Peran</p>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         SCRIPT JAVASCRIPT
+         ========================================================= -->
+    <script>
+        function openProfile(img, name, nim, role) {
+            document.getElementById('modalImg').src = img;
+            document.getElementById('modalName').innerText = name;
+
+            const nimEl = document.getElementById('modalNim');
+            if (nim && nim.trim() !== '') {
+                nimEl.innerText = nim;
+                nimEl.style.display = 'inline-block';
+            } else {
+                nimEl.style.display = 'none';
+            }
+
+            document.getElementById('modalRole').innerText = role;
+            document.getElementById('profileModal').classList.add('active');
+        }
+
+        function closeProfile(e) {
+            const modal = document.getElementById('profileModal');
+            if (!e || e.target === modal || e.target.classList.contains('modal-close')) {
+                modal.classList.remove('active');
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('profileModal');
+                if (modal) modal.classList.remove('active');
+            }
+        });
+
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            item.classList.toggle('open');
+        }
+
+        function toggleHukum(el) {
+            el.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>

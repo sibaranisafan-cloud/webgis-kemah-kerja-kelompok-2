@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebGIS Zona Nilai Tanah - Desa Sidodadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+<link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="app-header">
+    <div class="header-brand">
+        <div class="brand-logo">
+            <i class="fa-solid fa-map-location-dot"></i>
+        </div>
+        <div class="brand-info">
+            <h1>WebGIS Zona Nilai Tanah (ZNT)</h1>
+            <h2>Desa Sidodadi • Kec. Teluk Pandan • Kab. Pesawaran, Lampung</h2>
+        </div>
+    </div>
+    <a href="index.html" class="btn-home" title="Kembali ke Beranda">
+        <i class="fa-solid fa-house"></i> Beranda
+    </a>
+</header>
+
+<div class="app-body">
+
+    <aside class="app-sidebar">
+<div class="sidebar-tabs">
+    <button class="sidebar-toggle" onclick="toggleSidebar()" title="Sembunyikan/Tampilkan Panel">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <button class="tab-btn active" onclick="switchTab(this, 'peta')">
+        <i class="fa-solid fa-sliders"></i> <span>Panel Kontrol</span>
+    </button>
+</div>
+
+        <div id="tab-peta" class="tab-content active">
+
+            <!-- Card: Tentang WebGIS -->
+            <div class="ui-card">
+                <div class="card-title">
+                    <i class="fa-solid fa-map-location-dot icon-earth"></i>
+                    <span>Tentang WebGIS</span>
+                </div>
+                <p class="card-text">
+                    WebGIS ini menampilkan <strong>Zona Nilai Tanah (ZNT)</strong> Desa Sidodadi
+                    berbasis data <em>Nilai Indikasi Rata-rata (NIR)</em>. Klik polygon di peta
+                    untuk melihat detail nilai tanah per meter persegi.
+                </p>
+            </div>
+
+            <!-- Card: Informasi Wilayah -->
+            <div class="ui-card">
+                <div class="card-title">
+                    <i class="fa-solid fa-circle-info icon-earth"></i>
+                    <span>Informasi Wilayah</span>
+                </div>
+                <p class="card-text">Peta Nilai Indikasi Rata-rata (NIR) Tanah Desa Sidodadi berdasarkan klasifikasi zona tanah resmi.</p>
+            </div>
+
+            <!-- Card: Pemilihan Layer -->
+            <div class="ui-card">
+                <div class="card-title">
+                    <i class="fa-solid fa-layer-group icon-earth"></i>
+                    <span>Pemilihan Layer</span>
+                </div>
+
+                <div class="layer-group">
+
+                    <label class="layer-item">
+                        <div class="layer-item-left">
+                            <i class="fa-solid fa-map"></i>
+                            <span>Inverse Distance Weighting (IDW)</span>
+                        </div>
+                        <input type="checkbox"
+                            id="toggle-Inverse Distance Weighting (IDW)"
+                            checked
+                            onchange="toggleWebGISLayer('Inverse Distance Weighting (IDW)', this.checked)">
+                    </label>
+
+                        <label class="layer-item">
+                    <div class="layer-item-left">
+                     <i class="fa-solid fa-road"></i>
+                      <span>Jalan</span>
+                  </div>
+                  <input type="checkbox"
+                        id="toggle-jalan"
+                            checked
+                          onchange="toggleWebGISLayer('jalan', this.checked)">
+                     </label>
+                
+                    <label class="layer-item">
+                        <div class="layer-item-left">
+                            <i class="fa-solid fa-draw-polygon"></i>
+                            <span>Zona Nilai Tanah</span>
+                        </div>
+                        <input type="checkbox"
+                            id="toggle-zona"
+                            onchange="toggleWebGISLayer('zona', this.checked)">
+                    </label>
+
+                    <label class="layer-item">
+                        <div class="layer-item-left">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Titik Survei</span>
+                        </div>
+                        <input type="checkbox"
+                            id="toggle-titik"
+                            checked
+                            onchange="toggleWebGISLayer('titik', this.checked)">
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- Card: Ekspor Hasil Digitasi -->
+            <div class="card-panel">
+                <h4>
+                    <i class="fa-solid fa-download"></i> Ekspor Hasil Digitasi
+                </h4>
+                <div class="export-buttons">
+                    <button class="btn-export-geojson" onclick="exportGeoJSON()">
+                        <i class="fa-solid fa-download"></i> GeoJSON
+                    </button>
+                    <button class="btn-export-kml" onclick="exportKML()">
+                        <i class="fa-solid fa-earth-americas"></i> KML
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card: Detail Zona Terpilih -->
+            <div class="ui-card">
+                <div class="card-title">
+                    <i class="fa-solid fa-chart-pie icon-earth"></i>
+                    <span>Detail Zona Terpilih</span>
+                </div>
+                <div id="info-content" class="empty-state">
+                    <i class="fa-solid fa-arrow-pointer"></i>
+                    <p>Klik pada salah satu zona polygon di peta untuk menampilkan detail data tanah.</p>
+                </div>
+            </div>
+
+            <!-- Card: Analisis Data -->
+            <div class="ui-card">
+                <div class="card-title">
+                    <i class="fa-solid fa-chart-line icon-earth"></i>
+                    <span>Analisis Data</span>
+                </div>
+                <div class="tool-list">
+
+                    <button class="tool-btn" onclick="cetakGrafik()">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <span>Grafik Perbandingan Harga</span>
+                    <button class="tool-btn" onclick="openStatModal()">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Ringkasan Harga</span>
+        </button>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Card: Alat Bantu Peta -->
+            <div class="ui-card">
+                <div class="card-title">
+                    <i class="fa-solid fa-toolbox icon-earth"></i>
+                    <span>Alat Bantu Peta</span>
+                </div>
+                <div class="tool-list">
+
+                    <button class="tool-btn" id="btn-lacak-lokasi" onclick="toggleLacakLokasi()">
+                        <i class="fa-solid fa-satellite-dish"></i>
+                        <span id="label-lacak">Lacak Lokasi Saya</span>
+                    </button>
+
+                    <button class="tool-btn" onclick="zoomSemuaBidang()">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Zoom Semua Bidang</span>
+                    </button>
+
+                    <button class="tool-btn" onclick="tampilanAwal()">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Tampilan Awal</span>
+                    </button>
+
+                    <button class="tool-btn" onclick="layarPenuh()">
+                        <i class="fa-solid fa-maximize"></i>
+                        <span>Layar Penuh</span>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </aside>
+
+    <main class="main-content-scroll" id="main-scroll-container">
+
+        <section class="info-hero-section">
+            <div class="hero-banner">
+                <span class="hero-badge"><i class="fa-solid fa-map-location"></i> Geoportal Desa Sidodadi</span>
+                <h2>Sistem Informasi Spasial Zona Nilai Tanah (ZNT)</h2>
+                <p>
+                    WebGIS ini menghadirkan visualisasi spasial berbasis data Nilai Indikasi Rata-rata (NIR) tanah di Desa Sidodadi, Pesawaran.
+                    Gunakan portal ini untuk mengetahui estimasi nilai tanah, persebaran zona ekonomi, serta pengukuran luas/jarak bidang secara transparan dan akurat.
+                </p>
+                <button class="scroll-to-map-btn" onclick="scrollToMap()">
+                    <i class="fa-solid fa-map-marked-alt"></i> Jelajahi Peta Interaktif
+                </button>
+            </div>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon icon-red"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <div class="overview-text">
+                        <span>KATEGORI ZNT</span>
+                        <h3>Zona Nilai Tinggi</h3>
+                        <small>Area Komersial & Jalan Akses Utama</small>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon icon-orange"><i class="fa-solid fa-arrows-left-right-to-line"></i></div>
+                    <div class="overview-text">
+                        <span>KATEGORI ZNT</span>
+                        <h3>Zona Nilai Sedang</h3>
+                        <small>Kawasan Pemukiman Warga & Akses Lingkungan</small>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon icon-yellow"><i class="fa-solid fa-tree"></i></div>
+                    <div class="overview-text">
+                        <span>KATEGORI ZNT</span>
+                        <h3>Zona Nilai Rendah</h3>
+                        <small>Lahan Perkebunan, Pertanian & Terbuka</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-box">
+                <h4><i class="fa-solid fa-circle-play"></i> Panduan Penggunaan WebGIS</h4>
+                <div class="guide-steps">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <p><strong>Pilih Layer:</strong> Aktifkan layer IDW, Zona Nilai Tanah, atau Titik Survei sesuai kebutuhan analisis Anda.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <p><strong>Klik Peta:</strong> Klik polygon atau titik di peta untuk melihat detail zona, nilai NIR, dan atribut data.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <p><strong>Ukur & Cari:</strong> Gunakan alat pengukuran luas/jarak, lacak lokasi GPS, dan pencarian lokasi di toolbar peta.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator" onclick="scrollToMap()">
+                <span>Gulir ke bawah untuk membuka peta</span>
+                <i class="fa-solid fa-chevron-down bounce"></i>
+            </div>
+        </section>
+
+        <section id="map-section" class="map-section-wrapper">
+            <div id="map" class="map-view">
+                <div id="coordinate-box" class="coordinate-box">
+                    <i class="fa-solid fa-location-crosshairs"></i> Lat: - | Lng: -
+                </div>
+
+                <div id="legend-panel" class="legend-panel">
+                    <div class="legend-header">
+                        <div class="legend-header-left">
+                            <i class="fa-solid fa-list"></i>
+                            <span>Legenda</span>
+                        </div>
+                        <button class="legend-toggle" onclick="toggleLegendPanel()" title="Sembunyikan/Tampilkan">
+                            <i class="fa-solid fa-chevron-right" id="legend-toggle-icon"></i>
+                        </button>
+                    </div>
+                    <div class="legend-body" id="legend-body"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<!-- Modal Grafik Perbandingan -->
+<div id="grafikModal" class="modal-overlay">
+    <div class="modal-content modal-grafik">
+        <button class="modal-close" onclick="closeGrafik()">&times;</button>
+
+        <div class="grafik-header">
+            <div class="grafik-header-icon">
+                <i class="fa-solid fa-chart-column"></i>
+            </div>
+            <div>
+                <h2>Grafik Perbandingan Harga Tanah</h2>
+                <p>Perbandingan Harga ATR/BPN vs Hasil IDW per Zona</p>
+            </div>
+        </div>
+
+        <div class="grafik-container">
+            <canvas id="grafikPerbandingan"></canvas>
+        </div>
+
+        <div class="grafik-info">
+            <div class="grafik-legend">
+                <div class="legend-dot" style="background: #4472C4;"></div>
+                <span>Harga ATR/BPN</span>
+            </div>
+            <div class="grafik-legend">
+                <div class="legend-dot" style="background: #ED7D31;"></div>
+                <span>Harga IDW</span>
+            </div>
+            <div class="grafik-legend">
+                <div class="legend-dot" style="background: #A5A5A5;"></div>
+                <span>Selisih</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Ringkasan Harga -->
+<div id="statModal" class="modal-overlay">
+    <div class="modal-content modal-stat">
+        <button class="modal-close" onclick="closeStatModal()">&times;</button>
+
+        <div class="stat-modal-header">
+            <div class="stat-modal-icon">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div>
+                <h2>Ringkasan Harga Tanah</h2>
+                <p>Statistik perbandingan harga ATR/BPN vs IDW</p>
+            </div>
+        </div>
+
+        <div class="stat-list" id="stat-list">
+            <!-- Isi otomatis oleh JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Modal Profil -->
+<div id="profileModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeProfileModal()">&times;</button>
+        <div class="modal-body">
+            <img id="modalImg" src="" alt="Foto Profil" class="modal-avatar">
+            <h2 id="modalName">Nama</h2>
+            <p id="modalNim" class="modal-badge">NIM: -</p>
+            <p id="modalRole" class="modal-role">Peran</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/georaster"></script>
+<script src="https://unpkg.com/georaster-layer-for-leaflet/dist/georaster-layer-for-leaflet.min.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+function switchTab(btn, tabName) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tabName).classList.add('active');
+    btn.classList.add('active');
+}
+
+function scrollToMap() {
+    const mapSec = document.getElementById('map-section');
+    mapSec.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+        if (window.map) window.map.invalidateSize();
+    }, 400);
+}
+</script>
+
+</body>
+</html>
